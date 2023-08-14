@@ -1,10 +1,48 @@
 import React from 'react'
-import Bar from './Bar'
 import Bars from './Bars'
 
 
 function Control(props) {
 
+    const bubbleSort = ()=>{
+        let vec = props.array;
+        for( let i=0; i<vec.length-1; i++ ){
+            for( let j=0; j<vec.length-i -1 ; j++ ){
+                if( vec[j] > vec[j+1] ){
+                    let temp = vec[j];
+                    vec[j] = vec[j+1];
+                    vec[j+1] = temp;
+                }
+                props.update(vec);
+                setTimeout('', 1000) 
+            }
+            props.update(vec);
+        }
+    }
+
+
+
+
+    const forward = () => {
+        let technique = document.getElementById("techniques");
+       
+           let num = technique.selectedIndex;
+
+           
+           if( num === 0 ){
+            bubbleSort();
+           }
+        //    else if( num === 1 ){
+        //     selectionSort();
+        //    }
+        //    else if( num === 2 ){
+        //     insertionSort();
+        //    }
+
+
+           
+        
+    }
 
 
     return (
@@ -20,7 +58,7 @@ function Control(props) {
                 </select>
 
                 <button className='btn btn-primary mx-2' onClick={props.generate}>Generate Array</button>
-                <button className='btn btn-primary mx-2' >Sort</button>
+                <button className='btn btn-primary mx-2' onClick={forward} >Sort</button>
             </div>
         </nav>
     )
@@ -31,9 +69,9 @@ function Control(props) {
 export default function Sorting(props) {
     return (
         <>
-            <Control generate={props.generate} />
-            <div className='bg-light'>
-                <br /><br />
+            <Control generate={props.generate} array={props.array} update={props.update} />
+            <div className='container' style={{ alignContent: 'center', backgroundColor: 'pink', }}>
+
 
 
                 <Bars array={props.array} />
