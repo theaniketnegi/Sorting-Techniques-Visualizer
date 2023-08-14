@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Navbar( props ) {
     return (
-        <nav className="navbar navbar-expand-lg bg-dark">
+        <nav className="navbar navbar-expand-lg bg-dark" style={{position: 'fixed', top: '0', width: '100%',}}>
             <div className="container-fluid">
                 <a className="navbar-brand text-light" href="#"> { props.title } </a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,7 +20,7 @@ export default function Navbar( props ) {
                             <a className="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
-                            <ul className="dropdown-menu">
+                            <ul className="dropdown-menu bg-dark">
                                 <li><a className="dropdown-item text-light" href="#">Action</a></li>
                                 <li><a className="dropdown-item text-light" href="#">Another action</a></li>
                                 <li><hr className="dropdown-divider"/></li>
