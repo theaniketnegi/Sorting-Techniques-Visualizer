@@ -24,7 +24,7 @@ function App() {
   const handleGenerateArray = ()=>{
     setArr(getNewArray());
   }
-  const handleUpdateArray = ( vec )=>{
+  const handleUpdateArray = async function( vec ){
     setArr(vec);
   }
 

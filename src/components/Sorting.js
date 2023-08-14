@@ -2,10 +2,13 @@ import React from 'react'
 import Bars from './Bars'
 
 
-function Control(props) {
+function Control(props) { 
 
-    const bubbleSort = ()=>{
-        let vec = props.array;
+    const bubbleSort = async function(){
+        // let vec = props.array;
+        let vec = [...props.array];
+        console.log(vec);
+        console.log(props.array);
         for( let i=0; i<vec.length-1; i++ ){
             for( let j=0; j<vec.length-i -1 ; j++ ){
                 if( vec[j] > vec[j+1] ){
@@ -13,11 +16,13 @@ function Control(props) {
                     vec[j] = vec[j+1];
                     vec[j+1] = temp;
                 }
-                props.update(vec);
+                props.update(vec); 
+                // props.generate();
                 setTimeout('', 1000) 
             }
-            props.update(vec);
         }
+        console.log(vec);
+        console.log(props.array);
     }
 
 
